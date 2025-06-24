@@ -296,6 +296,8 @@ const DailySelfCareRoutine = () => {
     );
   };
 
+  console.log("Morning Progress:", morningProgress);
+
   return (
     <div className={`min-h-screen transition-all duration-500 ${
       darkMode 
@@ -369,7 +371,7 @@ const DailySelfCareRoutine = () => {
                     {Object.values(checkedItems).filter(Boolean).length}/{timeline.length}
                   </Badge>
                 </div>
-                <Progress value={morningProgress} className={`w-full h-3 ${darkMode ? 'bg-orange-900/50' : 'bg-orange-100'}`} />
+                <Progress value={isNaN(morningProgress) ? 0 : morningProgress} className={`w-full h-3 ${darkMode ? 'bg-orange-900/50' : 'bg-orange-100'}`} />
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className={`flex items-center gap-4 p-4 rounded-lg shadow-sm ${
