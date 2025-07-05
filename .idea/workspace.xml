@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Migrate to Turborepo">
+    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Merge branch 'main' of https://github.com/Fremen1990/self-care-routine into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;apps/docs/next.config.mjs&#10;#&#9;packages/services/src/routine-service.ts&#10;#&#9;packages/types/src/routine.ts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docs/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/services/src/routine-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/services/src/routine-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/types/src/routine.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/types/src/routine.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/docs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +62,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#1 on develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#2 on develop&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/turborepo-shadcn-ui&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
