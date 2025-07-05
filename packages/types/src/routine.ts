@@ -1,6 +1,7 @@
 export interface RoutineTask {
   id: string;
-  name: string;
+  time: string; // HH:mm format
+  title: string;
   description: string;
   duration: number; // in minutes
   icon: string;
@@ -29,7 +30,7 @@ export interface RoutineState {
   currentTab: 'morning' | 'evening';
 }
 
-export interface QuickTip {
+export interface RoutineTip {
   id: string;
   icon: string;
   title: string;

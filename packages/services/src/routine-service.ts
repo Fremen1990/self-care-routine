@@ -1,4 +1,4 @@
-import { RoutineTask, RoutineTip } from '@repo/types/routine';
+import {RoutineTask, RoutineTip} from '@repo/types/routine';
 
 export class RoutineService {
   static readonly MORNING_TASKS: Omit<RoutineTask, 'completed'>[] = [
@@ -58,6 +58,7 @@ export class RoutineService {
       time: '20:30',
       title: 'Screens Off',
       description: 'Turn off all screens, start wind-down',
+      duration: 0,
       icon: '📵'
     },
     {
@@ -97,6 +98,7 @@ export class RoutineService {
       time: '21:20',
       title: 'Reading in Bed',
       description: 'Read until naturally sleepy',
+      duration: 40,
       icon: '📚'
     }
   ];
@@ -106,65 +108,90 @@ export class RoutineService {
       id: 'running',
       icon: '🏃‍♂️',
       title: 'Running',
-      description: 'Stay hydrated, listen to your body, vary routes for motivation'
+      description: 'Stay hydrated, listen to your body, vary routes for motivation',
+      category: 'morning'
     },
     {
       id: 'cold-shower',
       icon: '🚿',
       title: 'Cold Shower',
-      description: 'Reduces inflammation, boosts energy, start with 30 seconds'
+      description: 'Reduces inflammation, boosts energy, start with 30 seconds',
+      category: 'morning'
     },
     {
       id: 'stretching',
       icon: '🤸',
       title: 'Stretching',
-      description: 'Cross-body arm stretches, doorway chest stretches, hold 20-30s'
+      description: 'Cross-body arm stretches, doorway chest stretches, hold 20-30s',
+      category: 'morning'
     },
     {
       id: 'meditation',
       icon: '🧘',
       title: 'Meditation',
-      description: 'Morning: energizing breath work • Evening: body scan or loving-kindness'
+      description: 'Morning: energizing breath work • Evening: body scan or loving-kindness',
+      category: 'both'
     },
     {
       id: 'reading',
       icon: '📚',
       title: 'Reading',
-      description: 'Choose calming genres, use dim warm light, stop when drowsy'
+      description: 'Choose calming genres, use dim warm light, stop when drowsy',
+      category: 'evening'
     },
     {
       id: 'sleep',
       icon: '💤',
       title: 'Sleep',
-      description: 'Cool room (65-68°F), consistent times, no caffeine 6+ hours before bed'
+      description: 'Cool room (65-68°F), consistent times, no caffeine 6+ hours before bed',
+      category: 'both'
     }
   ];
 
-  static calculateMorningTimes(finishBy: string): RoutineTask[] {
-    const [hours, minutes] = finishBy.split(':').map(Number);
-    let totalMinutes = hours * 60 + minutes;
-    const tasks: RoutineTask[] = [];
+static calculateMorningTimes(finishBy: string): RoutineTask[] {
+  const [hoursStr, minutesStr] = finishBy.split(':');
+  const hours = Number(hoursStr);
+  const minutes = Number(minutesStr);
 
-    // Work backwards from finish time
-    for (let i = this.MORNING_TASKS.length - 1; i >= 0; i--) {
-      const task = this.MORNING_TASKS[i];
-      totalMinutes -= task.duration || 0;
-
-      const taskHours = Math.floor(totalMinutes / 60);
-      const taskMinutes = totalMinutes % 60;
-
-      tasks.unshift({
-        ...task,
-        time: `${taskHours.toString().padStart(2, '0')}:${taskMinutes.toString().padStart(2, '0')}`,
-        completed: false
-      });
-    }
-
-    return tasks;
+  if (isNaN(hours) || isNaN(minutes)) {
+    throw new Error('Invalid finishBy format. Expected HH:MM');
   }
 
+  let totalMinutes = hours * 60 + minutes;
+  const tasks: RoutineTask[] = [];
+
+  for (let i = this.MORNING_TASKS.length - 1; i >= 0; i--) {
+    const task = this.MORNING_TASKS[i];
+    if (!task) continue; // Skip if undefined
+
+    totalMinutes -= task.duration || 0;
+
+    const taskHours = Math.floor(totalMinutes / 60);
+    const taskMinutes = totalMinutes % 60;
+
+    tasks.unshift({
+      id: task.id ?? '',
+      time: `${taskHours.toString().padStart(2, '0')}:${taskMinutes.toString().padStart(2, '0')}`,
+      title: task.title ?? '',
+      description: task.description ?? '',
+      duration: task.duration,
+      icon: task.icon ?? '',
+      completed: false
+    });
+  }
+
+  return tasks;
+}
+
   static calculateSleepTimes(wakeUpTime: string): { sevenHalf: string; eight: string } {
-    const [hours, minutes] = wakeUpTime.split(':').map(Number);
+    const [hoursStr, minutesStr] = wakeUpTime.split(':');
+    const hours = Number(hoursStr);
+    const minutes = Number(minutesStr);
+
+    if (isNaN(hours) || isNaN(minutes)) {
+      throw new Error('Invalid wakeUpTime format. Expected HH:MM');
+    }
+
     const wakeUpMinutes = hours * 60 + minutes;
 
     const sevenHalfMinutes = (wakeUpMinutes - 450 + 1440) % 1440;
