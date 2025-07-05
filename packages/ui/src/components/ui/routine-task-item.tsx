@@ -1,6 +1,6 @@
-import React from 'react';
-import { Checkbox } from '@repo/ui/components/ui/checkbox';
-import { cn } from '@repo/ui/lib/utils';
+import React from "react";
+import { Checkbox } from "@repo/ui/components/ui/checkbox";
+import { cn } from "@repo/ui/lib/utils";
 
 interface RoutineTaskItemProps {
   task: {
@@ -17,10 +17,12 @@ interface RoutineTaskItemProps {
 
 export function RoutineTaskItem({ task, onToggle }: RoutineTaskItemProps) {
   return (
-    <div className={cn(
-      "flex items-start space-x-3 p-4 rounded-lg transition-all",
-      task.completed ? "opacity-60 bg-muted/50" : "bg-card"
-    )}>
+    <div
+      className={cn(
+        "flex items-start space-x-3 p-4 rounded-lg transition-all",
+        task.completed ? "opacity-60 bg-muted/50" : "bg-card",
+      )}
+    >
       <Checkbox
         id={task.id}
         checked={task.completed}
@@ -35,14 +37,22 @@ export function RoutineTaskItem({ task, onToggle }: RoutineTaskItemProps) {
           <span className="text-2xl">{task.icon}</span>
           <div className="flex-1">
             <div className="flex items-center gap-2">
-              <span className={cn(task.completed && "line-through")}>{task.title}</span>
+              <span className={cn(task.completed && "line-through")}>
+                {task.title}
+              </span>
               {task.time && (
-                <span className="text-xs text-muted-foreground">{task.time}</span>
+                <span className="text-xs text-muted-foreground">
+                  {task.time}
+                </span>
               )}
             </div>
-            <p className="text-xs text-muted-foreground mt-1">{task.description}</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              {task.description}
+            </p>
             {task.duration && (
-              <p className="text-xs text-muted-foreground">{task.duration} min</p>
+              <p className="text-xs text-muted-foreground">
+                {task.duration} min
+              </p>
             )}
           </div>
         </label>

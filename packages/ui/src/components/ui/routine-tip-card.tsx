@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardContent } from '@repo/ui/components/ui/card';
+import React from "react";
+import { Card, CardContent } from "@repo/ui/components/ui/card";
 
 interface RoutineTipCardProps {
   tip: {
@@ -17,7 +17,9 @@ export function RoutineTipCard({ tip }: RoutineTipCardProps) {
           <span className="text-2xl">{tip.icon}</span>
           <div>
             <h4 className="font-semibold text-sm">{tip.title}</h4>
-            <p className="text-xs text-muted-foreground mt-1">{tip.description}</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              {tip.description}
+            </p>
           </div>
         </div>
       </CardContent>
