@@ -38,8 +38,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build docs app
-        run: pnpm build --filter=docs
+      - name: Build web app
+        run: pnpm build --filter=web
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -47,7 +47,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './apps/docs/out'
+          path: './apps/web/out'
 
       - name: Deploy to GitHub Pages
         id: deployment
