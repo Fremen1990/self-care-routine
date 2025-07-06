@@ -16,6 +16,7 @@ import { RoutineTaskItem } from "@repo/ui/components/ui/routine-task-item";
 import { RoutineTipCard } from "@repo/ui/components/ui/routine-tip-card";
 import { RoutineService } from "@repo/services/routine-service";
 import { ThemeToggle } from "@repo/ui/components/ui/theme-toggle";
+import { ProgressWithConfetti } from "@repo/ui/components/ui/progress-with-confetti";
 
 export default function RoutinePage() {
   const {
@@ -55,9 +56,10 @@ export default function RoutinePage() {
         </TabsList>
 
         <TabsContent value="morning" className="space-y-6">
-          <Progress
+          <ProgressWithConfetti
             value={morningProgress}
             className="h-5 [&>div]:bg-green-600"
+            withConfetti
           />
 
           <div className="space-y-4">
@@ -103,9 +105,10 @@ export default function RoutinePage() {
         </TabsContent>
 
         <TabsContent value="evening" className="space-y-6">
-          <Progress
+          <ProgressWithConfetti
             value={eveningProgress}
             className="h-5 [&>div]:bg-green-600"
+            withConfetti
           />
 
           <div className="p-4 bg-muted rounded-lg">

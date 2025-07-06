@@ -9,7 +9,7 @@
     "./routine": "./src/routine.ts"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint src",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
