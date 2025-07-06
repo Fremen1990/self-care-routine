@@ -28,7 +28,7 @@ export default function Page() {
           <Progress value={33} className="w-full" />
           <div className="flex justify-center gap-4">
             <Button asChild>
-              <Link href="/routine">Go to Routine 🚀</Link>
+              <Link href="/routine/morning">Go to Routine 🚀</Link>
             </Button>
           </div>
         </CardContent>
