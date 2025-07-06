@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Drag-and-drop Reordering - @dnd-kit">
+    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="reusable Zustand Store for web and react native">
+      <change afterPath="$PROJECT_DIR$/apps/web/store/routine-store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/routine/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/routine/evening/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/routine/evening/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/routine/morning/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/routine/morning/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/stores/src/routine-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/stores/src/routine-store.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +80,7 @@
     "npm.dev.executor": "Run",
     "npm.lint.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/devthomas/devthomas/projects/self-care-routine/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "web-ide.project.structure",
     "ts.external.directory.path": "/Users/devthomas/devthomas/projects/self-care-routine/packages/ui/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -141,7 +143,7 @@
       <workItem from="1750779968939" duration="1366000" />
       <workItem from="1751662780714" duration="1000" />
       <workItem from="1751706892178" duration="13927000" />
-      <workItem from="1751745978989" duration="12025000" />
+      <workItem from="1751745978989" duration="13211000" />
     </task>
     <task id="LOCAL-00001" summary="Migrate to Turborepo">
       <option name="closed" value="true" />
@@ -191,7 +193,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751802015959</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Split routes for morning and evening">
+      <option name="closed" value="true" />
+      <created>1751803288902</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1751803288902</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Split routes for morning and evening">
+      <option name="closed" value="true" />
+      <created>1751803301328</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1751803301328</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,6 +222,8 @@
     <MESSAGE value="Add confetti to progress bar" />
     <MESSAGE value="Implement Local Storage Persistence - Zustand persist(localStorage)" />
     <MESSAGE value="Drag-and-drop Reordering - @dnd-kit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Drag-and-drop Reordering - @dnd-kit" />
+    <MESSAGE value="Split routes for morning and evening" />
+    <MESSAGE value="reusable Zustand Store for web and react native" />
+    <option name="LAST_COMMIT_MESSAGE" value="reusable Zustand Store for web and react native" />
   </component>
 </project>

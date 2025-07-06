@@ -3,124 +3,128 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import { RoutineStore, RoutineTask } from "@repo/types";
 import { RoutineService } from "@repo/services";
 
-export const routineStore = create<RoutineStore>()(
-  persist(
-    (set, get) => ({
-      // Initial state
-      finishBy: "09:00",
-      morningTasks: RoutineService.calculateMorningTimes("09:00"),
-      eveningTasks: RoutineService.getEveningTasksWithCompletion(),
-
-      morningProgress: 0,
-      eveningProgress: 0,
-      sleepTimes: RoutineService.calculateSleepTimes(
-        RoutineService.calculateMorningTimes("09:00")[0]?.time || "09:00",
-      ), // Calculate initial sleep times
-
-      completionHistory: {},
-
-      // Actions
-      toggleTask: (taskId, isEvening = false) =>
-        set((state) => {
-          if (isEvening) {
-            const updatedEveningTasks = state.eveningTasks.map((task) =>
+// Parametrize storage
+export const createRoutineStore = (
+  storage:
+    | Storage
+    | {
+        getItem: (name: string) => Promise<string | null> | string | null;
+        setItem: (name: string, value: string) => Promise<void> | void;
+        removeItem: (name: string) => Promise<void> | void;
+      },
+) =>
+  create<RoutineStore>()(
+    persist(
+      (set, get) => ({
+        finishBy: "09:00",
+        morningTasks: RoutineService.calculateMorningTimes("09:00"),
+        eveningTasks: RoutineService.getEveningTasksWithCompletion(),
+        morningProgress: 0,
+        eveningProgress: 0,
+        sleepTimes: RoutineService.calculateSleepTimes(
+          RoutineService.calculateMorningTimes("09:00")[0]?.time || "09:00",
+        ),
+        completionHistory: {},
+        toggleTask: (taskId, isEvening = false) =>
+          set((state) => {
+            if (isEvening) {
+              const updatedEveningTasks = state.eveningTasks.map((task) =>
+                task.id === taskId
+                  ? { ...task, completed: !task.completed }
+                  : task,
+              );
+              return {
+                eveningTasks: updatedEveningTasks,
+                eveningProgress:
+                  RoutineService.calculateProgress(updatedEveningTasks),
+              };
+            }
+            const updatedMorningTasks = state.morningTasks.map((task) =>
               task.id === taskId
                 ? { ...task, completed: !task.completed }
                 : task,
             );
             return {
-              eveningTasks: updatedEveningTasks,
-              eveningProgress:
-                RoutineService.calculateProgress(updatedEveningTasks), // Calculate progress
+              morningTasks: updatedMorningTasks,
+              morningProgress:
+                RoutineService.calculateProgress(updatedMorningTasks),
             };
-          }
-
-          const updatedMorningTasks = state.morningTasks.map((task) =>
-            task.id === taskId ? { ...task, completed: !task.completed } : task,
-          );
-          return {
-            morningTasks: updatedMorningTasks,
-            morningProgress:
-              RoutineService.calculateProgress(updatedMorningTasks), // Calculate progress
-          };
-        }),
-
-      resetMorning: () =>
-        set((state) => ({
-          morningTasks: state.morningTasks.map((t) => ({
-            ...t,
-            completed: false,
-          })),
-          morningProgress: 0, // Reset progress
-        })),
-
-      resetEvening: () =>
-        set((state) => ({
-          eveningTasks: state.eveningTasks.map((t) => ({
-            ...t,
-            completed: false,
-          })),
-          eveningProgress: 0, // Reset progress
-        })),
-
-      updateFinishBy: (time) =>
-        set(() => {
-          const newMorningTasks = RoutineService.calculateMorningTimes(time);
-          const firstTaskTime = newMorningTasks[0]?.time || time;
-
-          return {
-            finishBy: time,
-            morningTasks: newMorningTasks,
+          }),
+        resetMorning: () =>
+          set((state) => ({
+            morningTasks: state.morningTasks.map((t) => ({
+              ...t,
+              completed: false,
+            })),
             morningProgress: 0,
-            sleepTimes: RoutineService.calculateSleepTimes(firstTaskTime), // Update sleep times
-          };
-        }),
-
-      saveCompletion: () =>
-        set((state) => {
-          const today = new Date().toISOString().split("T")[0];
-          return {
-            completionHistory: {
-              ...state.completionHistory,
-              [today as string]: {
-                morningProgress: state.morningProgress,
-                eveningProgress: state.eveningProgress,
-                morningTasks: [...state.morningTasks],
-                eveningTasks: [...state.eveningTasks],
-                completedAt: new Date().toISOString(),
+          })),
+        resetEvening: () =>
+          set((state) => ({
+            eveningTasks: state.eveningTasks.map((t) => ({
+              ...t,
+              completed: false,
+            })),
+            eveningProgress: 0,
+          })),
+        updateFinishBy: (time) =>
+          set(() => {
+            const newMorningTasks = RoutineService.calculateMorningTimes(time);
+            const firstTaskTime = newMorningTasks[0]?.time || time;
+            return {
+              finishBy: time,
+              morningTasks: newMorningTasks,
+              morningProgress: 0,
+              sleepTimes: RoutineService.calculateSleepTimes(firstTaskTime),
+            };
+          }),
+        saveCompletion: () =>
+          set((state) => {
+            const today = new Date().toISOString().split("T")[0];
+            return {
+              completionHistory: {
+                ...state.completionHistory,
+                [today as string]: {
+                  morningProgress: state.morningProgress,
+                  eveningProgress: state.eveningProgress,
+                  morningTasks: [...state.morningTasks],
+                  eveningTasks: [...state.eveningTasks],
+                  completedAt: new Date().toISOString(),
+                },
               },
-            },
-          };
-        }),
-
-      reorderTasks: (taskIds, isEvening = false) =>
-        set((state) => {
-          const taskList = isEvening ? state.eveningTasks : state.morningTasks;
-          const reorderedTasks = taskIds.map(
-            (id) => taskList.find((task: RoutineTask) => task.id === id)!,
-          );
-
-          return isEvening
-            ? { eveningTasks: reorderedTasks }
-            : { morningTasks: reorderedTasks };
-        }),
-    }),
-
-    {
-      name: "routine-storage", // localStorage key
-      storage: createJSONStorage(() => localStorage),
-      partialize: (state) => ({
-        // Only persist these fields
-        finishBy: state.finishBy,
-        morningTasks: state.morningTasks,
-        eveningTasks: state.eveningTasks,
-        morningProgress: state.morningProgress,
-        eveningProgress: state.eveningProgress,
-        sleepTimes: state.sleepTimes,
-        completionHistory: state.completionHistory,
+            };
+          }),
+        reorderTasks: (taskIds, isEvening = false) =>
+          set((state) => {
+            const taskList = isEvening
+              ? state.eveningTasks
+              : state.morningTasks;
+            const reorderedTasks = taskIds.map(
+              (id) => taskList.find((task: RoutineTask) => task.id === id)!,
+            );
+            return isEvening
+              ? { eveningTasks: reorderedTasks }
+              : { morningTasks: reorderedTasks };
+          }),
       }),
-    },
-  ),
-);
+      {
+        name: "routine-storage",
+        storage: createJSONStorage(() => storage),
+        partialize: (state) => ({
+          finishBy: state.finishBy,
+          morningTasks: state.morningTasks,
+          eveningTasks: state.eveningTasks,
+          morningProgress: state.morningProgress,
+          eveningProgress: state.eveningProgress,
+          sleepTimes: state.sleepTimes,
+          completionHistory: state.completionHistory,
+        }),
+      },
+    ),
+  );
 
-export const useRoutineStore = routineStore;
+// Usage example (web):
+// export const useRoutineStore = createRoutineStore(localStorage);
+
+// Usage example (React Native):
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+// export const useRoutineStore = createRoutineStore(AsyncStorage);

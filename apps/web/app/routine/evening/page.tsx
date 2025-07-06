@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { useRoutineStore } from "@repo/stores";
 import { ProgressWithConfetti } from "@repo/ui/components/ui/progress-with-confetti";
 import { Button } from "@repo/ui/components/ui/button";
 import { SortableTaskList } from "@repo/ui/components/ui/sortable-task-list";
 import { QuickTipsSection } from "~/components/QuickTipsSection";
+import { useRoutineStore } from "~/store/routine-store";
 
 export default function EveningRoutinePage() {
   const {
