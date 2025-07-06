@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Dialog,
   DialogTrigger,
@@ -6,7 +8,7 @@ import {
 } from "@repo/ui/components/ui/dialog";
 import { Button } from "@repo/ui/components/ui/button";
 import { RoutineTaskForm } from "~/components/RoutineTaskForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { RoutineTask } from "@repo/types";
 
 type RoutineTaskModalProps = {
@@ -21,6 +23,11 @@ export function RoutineTaskModal({
   isEvening,
 }: RoutineTaskModalProps) {
   const [open, setOpen] = useState(false);
+
+  // Sync open state with editTask
+  useEffect(() => {
+    if (editTask) setOpen(true);
+  }, [editTask]);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

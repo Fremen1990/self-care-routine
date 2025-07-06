@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="reusable Zustand Store for web and react native">
+    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Basic CRUD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/routine/evening/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/routine/evening/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/routine/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/routine/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/web/app/routine/morning/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/routine/morning/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/store/routine-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/store/routine-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/stores/src/routine-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/stores/src/routine-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/types/src/routine-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/types/src/routine-store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/sortable-task-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/sortable-task-list.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/components/RoutineTaskModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/components/RoutineTaskModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +144,7 @@
       <workItem from="1750779968939" duration="1366000" />
       <workItem from="1751662780714" duration="1000" />
       <workItem from="1751706892178" duration="13927000" />
-      <workItem from="1751745978989" duration="17387000" />
+      <workItem from="1751745978989" duration="19400000" />
     </task>
     <task id="LOCAL-00001" summary="Migrate to Turborepo">
       <option name="closed" value="true" />
@@ -222,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751804298470</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Basic CRUD">
+      <option name="closed" value="true" />
+      <created>1751808591596</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1751808591596</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +241,7 @@
     <MESSAGE value="Drag-and-drop Reordering - @dnd-kit" />
     <MESSAGE value="Split routes for morning and evening" />
     <MESSAGE value="reusable Zustand Store for web and react native" />
-    <option name="LAST_COMMIT_MESSAGE" value="reusable Zustand Store for web and react native" />
+    <MESSAGE value="Basic CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic CRUD" />
   </component>
 </project>

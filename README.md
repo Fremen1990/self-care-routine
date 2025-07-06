@@ -8,10 +8,10 @@
 - [x] Local Storage Persistence - Zustand persist(localStorage)
 - [x] Browser's localStorage API - Zustand persist(localStorage)
 - [x] Drag-and-drop Reordering - @dnd-kit
+- [x] Custom Routines (CRUD) - Local state management
 - [ ] Sound Effects - Web Audio API
 - [ ] Browser Notifications - Notification API
 - [ ] PWA Support - Service workers + manifest.json
-- [ ] Custom Routines (CRUD) - Local state management
 - [ ] Habit Streaks - Track in localStorage
 - [ ] Quick Stats Widget - Computed from local data
 - [ ] Basic Analytics - Calculate from localStorage data
