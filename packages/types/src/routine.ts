@@ -1,3 +1,16 @@
+export interface CompletionData {
+  morningProgress: number;
+  eveningProgress: number;
+  morningTasks: RoutineTask[];
+  eveningTasks: RoutineTask[];
+  completedAt: string;
+}
+
+export interface SleepTimes {
+  sevenHalf: string;
+  eight: string;
+}
+
 export interface RoutineTask {
   id: string;
   time: string; // HH:mm format

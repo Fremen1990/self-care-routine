@@ -7,16 +7,14 @@ import {
   TabsList,
   TabsTrigger,
 } from "@repo/ui/components/ui/tabs";
-import { Progress } from "@repo/ui/components/ui/progress";
 import { Button } from "@repo/ui/components/ui/button";
-import { Badge } from "@repo/ui/components/ui/badge";
 import { Separator } from "@repo/ui/components/ui/separator";
-import { useRoutine } from "@repo/hooks/use-routine";
 import { RoutineTaskItem } from "@repo/ui/components/ui/routine-task-item";
 import { RoutineTipCard } from "@repo/ui/components/ui/routine-tip-card";
 import { RoutineService } from "@repo/services/routine-service";
 import { ThemeToggle } from "@repo/ui/components/ui/theme-toggle";
 import { ProgressWithConfetti } from "@repo/ui/components/ui/progress-with-confetti";
+import { useRoutineStore } from "@repo/stores";
 
 export default function RoutinePage() {
   const {
@@ -30,7 +28,9 @@ export default function RoutinePage() {
     resetMorning,
     resetEvening,
     updateFinishBy,
-  } = useRoutine();
+  } = useRoutineStore();
+
+  console.log("morningProgress:", morningProgress);
 
   return (
     <div className="container mx-auto p-6 max-w-4xl">

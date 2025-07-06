@@ -102,7 +102,7 @@ export class RoutineService {
       duration: 40,
       icon: "📚",
     },
-  ];
+  ] as const;
 
   static readonly ROUTINE_TIPS: RoutineTip[] = [
     {
@@ -222,5 +222,12 @@ export class RoutineService {
   static calculateProgress(tasks: RoutineTask[]): number {
     const completed = tasks.filter((t) => t.completed).length;
     return Math.round((completed / tasks.length) * 100);
+  }
+
+  static getEveningTasksWithCompletion(): RoutineTask[] {
+    return this.EVENING_TASKS.map((task) => ({
+      ...task,
+      completed: false,
+    }));
   }
 }
