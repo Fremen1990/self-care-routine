@@ -9,12 +9,12 @@ import {
 } from "@repo/ui/components/ui/tabs";
 import { Button } from "@repo/ui/components/ui/button";
 import { Separator } from "@repo/ui/components/ui/separator";
-import { RoutineTaskItem } from "@repo/ui/components/ui/routine-task-item";
 import { RoutineTipCard } from "@repo/ui/components/ui/routine-tip-card";
 import { RoutineService } from "@repo/services/routine-service";
 import { ThemeToggle } from "@repo/ui/components/ui/theme-toggle";
 import { ProgressWithConfetti } from "@repo/ui/components/ui/progress-with-confetti";
 import { useRoutineStore } from "@repo/stores";
+import { SortableTaskList } from "@repo/ui/components/ui/sortable-task-list";
 
 export default function RoutinePage() {
   const {
@@ -28,6 +28,7 @@ export default function RoutinePage() {
     resetMorning,
     resetEvening,
     updateFinishBy,
+    reorderTasks,
   } = useRoutineStore();
 
   console.log("morningProgress:", morningProgress);
@@ -85,15 +86,11 @@ export default function RoutinePage() {
             </div>
           </div>
 
-          <div className="space-y-3">
-            {morningTasks.map((task) => (
-              <RoutineTaskItem
-                key={task.id}
-                task={task}
-                onToggle={toggleTask}
-              />
-            ))}
-          </div>
+          <SortableTaskList
+            tasks={morningTasks}
+            onToggle={toggleTask}
+            onReorder={(taskIds) => reorderTasks(taskIds, false)}
+          />
 
           <Button
             onClick={resetMorning}
@@ -120,15 +117,11 @@ export default function RoutinePage() {
             </p>
           </div>
 
-          <div className="space-y-3">
-            {eveningTasks.map((task) => (
-              <RoutineTaskItem
-                key={task.id}
-                task={task}
-                onToggle={(id) => toggleTask(id, true)}
-              />
-            ))}
-          </div>
+          <SortableTaskList
+            tasks={eveningTasks}
+            onToggle={(id) => toggleTask(id, true)}
+            onReorder={(taskIds) => reorderTasks(taskIds, true)}
+          />
 
           <Button
             onClick={resetEvening}

@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
-import { RoutineStore } from "@repo/types";
+import { RoutineStore, RoutineTask } from "@repo/types";
 import { RoutineService } from "@repo/services";
 
 export const routineStore = create<RoutineStore>()(
@@ -92,7 +92,20 @@ export const routineStore = create<RoutineStore>()(
             },
           };
         }),
+
+      reorderTasks: (taskIds, isEvening = false) =>
+        set((state) => {
+          const taskList = isEvening ? state.eveningTasks : state.morningTasks;
+          const reorderedTasks = taskIds.map(
+            (id) => taskList.find((task: RoutineTask) => task.id === id)!,
+          );
+
+          return isEvening
+            ? { eveningTasks: reorderedTasks }
+            : { morningTasks: reorderedTasks };
+        }),
     }),
+
     {
       name: "routine-storage", // localStorage key
       storage: createJSONStorage(() => localStorage),

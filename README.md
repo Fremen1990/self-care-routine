@@ -7,7 +7,7 @@
 
 - [x] Local Storage Persistence - Zustand persist(localStorage)
 - [x] Browser's localStorage API - Zustand persist(localStorage)
-- [ ] Drag-and-drop Reordering - React DnD or native HTML5
+- [x] Drag-and-drop Reordering - @dnd-kit
 - [ ] Sound Effects - Web Audio API
 - [ ] Browser Notifications - Notification API
 - [ ] PWA Support - Service workers + manifest.json

@@ -19,8 +19,10 @@ export function RoutineTaskItem({ task, onToggle }: RoutineTaskItemProps) {
   return (
     <div
       className={cn(
-        "flex items-start space-x-3 p-4 rounded-lg transition-all",
+        "flex items-start space-x-3 p-4 rounded-lg transition-all duration-200 ease-in-out",
         task.completed ? "opacity-60 bg-muted/50" : "bg-card",
+        "hover:bg-green-100 dark:hover:bg-green-950", // Solid colors
+        "hover:scale-[1.01] hover:shadow-md", // Subtle scale and shadow animation
       )}
     >
       <Checkbox

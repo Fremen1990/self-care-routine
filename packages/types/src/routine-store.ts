@@ -19,4 +19,5 @@ export interface RoutineStore {
   resetEvening: () => void;
   updateFinishBy: (time: string) => void;
   saveCompletion: () => void;
+  reorderTasks: (taskIds: string[], isEvening?: boolean) => void;
 }
