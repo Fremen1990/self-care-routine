@@ -1,11 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { ProgressWithConfetti } from "@repo/ui/components/ui/progress-with-confetti";
 import { Button } from "@repo/ui/components/ui/button";
 import { SortableTaskList } from "@repo/ui/components/ui/sortable-task-list";
 import { QuickTipsSection } from "~/components/QuickTipsSection";
 import { useRoutineStore } from "~/store/routine-store";
+import { RoutineTaskModal } from "~/components/RoutineTaskModal";
+import type { RoutineTask } from "@repo/types";
 
 export default function EveningRoutinePage() {
   const {
@@ -14,10 +16,23 @@ export default function EveningRoutinePage() {
     toggleTask,
     resetEvening,
     reorderTasks,
+    editTask,
+    deleteTask,
   } = useRoutineStore();
+
+  const [editingTask, setEditingTask] = useState<RoutineTask | null>(null);
+
+  const handleEdit = (task: RoutineTask) => setEditingTask(task);
+  const handleDelete = (taskId: string) => deleteTask(taskId, true);
 
   return (
     <div className="space-y-6">
+      <RoutineTaskModal
+        isEvening={true}
+        editTask={editingTask}
+        onFinishEdit={() => setEditingTask(null)}
+      />
+
       <ProgressWithConfetti
         value={eveningProgress}
         className="h-5 [&>div]:bg-green-600"
@@ -34,6 +49,8 @@ export default function EveningRoutinePage() {
         tasks={eveningTasks}
         onToggle={(id) => toggleTask(id, true)}
         onReorder={(taskIds) => reorderTasks(taskIds, true)}
+        onEdit={handleEdit}
+        onDelete={handleDelete}
       />
       <Button
         onClick={resetEvening}

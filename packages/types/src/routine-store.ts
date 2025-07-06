@@ -20,4 +20,13 @@ export interface RoutineStore {
   updateFinishBy: (time: string) => void;
   saveCompletion: () => void;
   reorderTasks: (taskIds: string[], isEvening?: boolean) => void;
+
+  // CRUD operations for tasks
+  addTask: (task: RoutineTask, isEvening?: boolean) => void;
+  editTask: (
+    taskId: string,
+    updatedTask: Partial<RoutineTask>,
+    isEvening?: boolean,
+  ) => void;
+  deleteTask: (taskId: string, isEvening?: boolean) => void;
 }

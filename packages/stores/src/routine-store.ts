@@ -50,6 +50,36 @@ export const createRoutineStore = (
                 RoutineService.calculateProgress(updatedMorningTasks),
             };
           }),
+        addTask: (task: RoutineTask, isEvening = false) =>
+          set((state) => {
+            const key = isEvening ? "eveningTasks" : "morningTasks";
+            return {
+              [key]: [...state[key], task],
+            };
+          }),
+
+        editTask: (
+          taskId: string,
+          updates: Partial<RoutineTask>,
+          isEvening = false,
+        ) =>
+          set((state) => {
+            const key = isEvening ? "eveningTasks" : "morningTasks";
+            return {
+              [key]: state[key].map((task) =>
+                task.id === taskId ? { ...task, ...updates } : task,
+              ),
+            };
+          }),
+
+        deleteTask: (taskId: string, isEvening = false) =>
+          set((state) => {
+            const key = isEvening ? "eveningTasks" : "morningTasks";
+            return {
+              [key]: state[key].filter((task) => task.id !== taskId),
+            };
+          }),
+
         resetMorning: () =>
           set((state) => ({
             morningTasks: state.morningTasks.map((t) => ({

@@ -20,13 +20,18 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { RoutineTaskItem } from "./routine-task-item";
 import { cn } from "@repo/ui/lib/utils";
+import { Button } from "./button";
+import { Pencil, Trash2 } from "lucide-react";
+import { RoutineTask } from "@repo/types";
 
 interface SortableTaskProps {
-  task: any;
+  task: RoutineTask;
   onToggle: (taskId: string) => void;
+  onEdit: (task: RoutineTask) => void;
+  onDelete: (taskId: string) => void;
 }
 
-function SortableTask({ task, onToggle }: SortableTaskProps) {
+function SortableTask({ task, onToggle, onEdit, onDelete }: SortableTaskProps) {
   const {
     attributes,
     listeners,
@@ -60,6 +65,22 @@ function SortableTask({ task, onToggle }: SortableTaskProps) {
         <div className="flex-1">
           <RoutineTaskItem task={task} onToggle={onToggle} />
         </div>
+        <Button
+          size="icon"
+          variant="ghost"
+          aria-label="Edit"
+          onClick={() => onEdit(task)}
+        >
+          <Pencil className="w-4 h-4" />
+        </Button>
+        <Button
+          size="icon"
+          variant="ghost"
+          aria-label="Delete"
+          onClick={() => onDelete(task.id)}
+        >
+          <Trash2 className="w-4 h-4 text-red-500" />
+        </Button>
       </div>
     </div>
   );
@@ -69,12 +90,16 @@ interface SortableTaskListProps {
   tasks: any[];
   onToggle: (taskId: string) => void;
   onReorder: (taskIds: string[]) => void;
+  onEdit: (task: RoutineTask) => void;
+  onDelete: (taskId: string) => void;
 }
 
 export function SortableTaskList({
   tasks,
   onToggle,
   onReorder,
+  onEdit,
+  onDelete,
 }: SortableTaskListProps) {
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -111,7 +136,13 @@ export function SortableTaskList({
       >
         <div className="space-y-3">
           {tasks.map((task) => (
-            <SortableTask key={task.id} task={task} onToggle={onToggle} />
+            <SortableTask
+              key={task.id}
+              task={task}
+              onToggle={onToggle}
+              onEdit={onEdit}
+              onDelete={onDelete}
+            />
           ))}
         </div>
       </SortableContext>

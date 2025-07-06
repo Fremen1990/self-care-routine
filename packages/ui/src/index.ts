@@ -13,3 +13,5 @@ export * from "./components/ui/theme-toggle";
 export * from "./components/ui/routine-task-item";
 export * from "./components/ui/progress-with-confetti";
 export * from "./components/ui/sortable-task-list";
+export * from "./components/ui/input";
+export * from "./components/ui/textarea";
