@@ -36,7 +36,7 @@
 - [ ] Routine Sharing (local) - Local state management
 - [ ] Theme Toggle/Dark Mode Schedule - CSS + localStorage
 
-## 🔧 Backend Required Features
+## 🔧 Backend Required Features (AppWrite or Firebase recommended)
 
 ### 🌐 Need Authentication & Database
 
