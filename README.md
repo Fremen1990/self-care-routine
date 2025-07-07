@@ -22,6 +22,14 @@
 - [ ] Weather Integration - Direct API calls from frontend
 - [ ] Global multi language support - i18next or similar library reactIntl - packages/i18n
 
+-----
+
+- [ ] EAS Build - Expo Application Services for building and deploying React Native apps + WEB
+    - [How to Deploy Your React Native Expo App to the App Store](https://www.youtube.com/watch?v=qzTZt6mYFF4)
+    - [The Ultimate Guide to Developing and Deploying a React Native App with Expo](https://medium.com/@sumitthrita.dev/the-ultimate-guide-to-developing-and-deploying-a-react-native-app-with-expo-b9766b02eec2)
+    - [EAS DOCS](https://expo.dev/eas/workflows/google-search-feb?utm_source=google&utm_medium=cpc&utm_campaign=22259666577&utm_term=react%20hosting&utm_content=174682255585&gad_source=1&gad_campaignid=22259666577&gbraid=0AAAAApZvKwH6HUwrpvzHQZqMvjNf7I_U0&gclid=CjwKCAjw4K3DBhBqEiwAYtG_9N8QB92nNo2kfZ19CK1EOBxC5pyaP8cHibxQon0Jr9ZNcEoxBZfzxhoCn-kQAvD_BwE)
+    - [React Native Hosting with EAS](https://expo.dev/blog/expo-announces-eas-hosting-service)
+
 ### ✅ Core Features WEB
 
 - [x] Local Storage Persistence - Zustand persist(localStorage)
