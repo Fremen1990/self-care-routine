@@ -3,7 +3,26 @@
 
 ## 🎨 Frontend-Only Features (Can implement immediately)
 
-### ✅ Core Features
+## 📱React Native Features (Can implement immediately) - Android/iOS + WEB
+
+- [ ] Working on Android/iOS + Web
+- [ ] Local Storage Persistence - Zustand persist(localStorage)
+- [ ] Drag-and-drop Reordering
+- [ ] Custom Routines (CRUD) - Local state management
+- [ ] Custom Routines (CRUD) - AppWrite/Firebase
+- [ ] Sound Effects - React Native Sound API
+- [ ] Push Notifications - React Native Push Notifications
+- [ ] Habit Streaks - Track in AppWrite/Firebase
+- [ ] Quick Stats Widget - Computed from AppWrite/Firebase data
+- [ ] Basic Analytics - Calculate from AppWrite/Firebase data
+- [ ] Routine templates - AppWrite/Firebase
+- [ ] Basic Timer/Countdown - React Native timers
+- [ ] Pomodoro Timer - React Native timers
+- [ ] Daily Affirmations - API from external service
+- [ ] Weather Integration - Direct API calls from frontend
+- [ ] Global multi language support - i18next or similar library reactIntl - packages/i18n
+
+### ✅ Core Features WEB
 
 - [x] Local Storage Persistence - Zustand persist(localStorage)
 - [x] Browser's localStorage API - Zustand persist(localStorage)
@@ -35,6 +54,7 @@
 - [ ] Routine Templates - Local state management
 - [ ] Routine Sharing (local) - Local state management
 - [ ] Theme Toggle/Dark Mode Schedule - CSS + localStorage
+
 
 ## 🔧 Backend Required Features (AppWrite or Firebase recommended)
 
