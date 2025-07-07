@@ -1,9 +1,32 @@
 # 🧘 Self Care Routing 🌅
 
-
 ## 🎨 Frontend-Only Features (Can implement immediately)
 
 ## 📱React Native Features (Can implement immediately) - Android/iOS + WEB
+
+```json
+{
+  "name": "mobile",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Add dev script here'",
+    "build": "echo 'Add build script here'",
+    "test": "echo 'Add test script here'",
+    "lint": "echo 'Add lint script here'"
+  },
+  "dependencies": {
+    "@repo/hooks": "workspace:*",
+    "@repo/services": "workspace:*",
+    "@repo/stores": "workspace:*",
+    "@repo/types": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*"
+  }
+}
+```
 
 - [ ] Working on Android/iOS + Web
 - [ ] Local Storage Persistence - Zustand persist(localStorage)
@@ -22,13 +45,13 @@
 - [ ] Weather Integration - Direct API calls from frontend
 - [ ] Global multi language support - i18next or similar library reactIntl - packages/i18n
 
------
+---
 
 - [ ] EAS Build - Expo Application Services for building and deploying React Native apps + WEB
-    - [How to Deploy Your React Native Expo App to the App Store](https://www.youtube.com/watch?v=qzTZt6mYFF4)
-    - [The Ultimate Guide to Developing and Deploying a React Native App with Expo](https://medium.com/@sumitthrita.dev/the-ultimate-guide-to-developing-and-deploying-a-react-native-app-with-expo-b9766b02eec2)
-    - [EAS DOCS](https://expo.dev/eas/workflows/google-search-feb?utm_source=google&utm_medium=cpc&utm_campaign=22259666577&utm_term=react%20hosting&utm_content=174682255585&gad_source=1&gad_campaignid=22259666577&gbraid=0AAAAApZvKwH6HUwrpvzHQZqMvjNf7I_U0&gclid=CjwKCAjw4K3DBhBqEiwAYtG_9N8QB92nNo2kfZ19CK1EOBxC5pyaP8cHibxQon0Jr9ZNcEoxBZfzxhoCn-kQAvD_BwE)
-    - [React Native Hosting with EAS](https://expo.dev/blog/expo-announces-eas-hosting-service)
+  - [How to Deploy Your React Native Expo App to the App Store](https://www.youtube.com/watch?v=qzTZt6mYFF4)
+  - [The Ultimate Guide to Developing and Deploying a React Native App with Expo](https://medium.com/@sumitthrita.dev/the-ultimate-guide-to-developing-and-deploying-a-react-native-app-with-expo-b9766b02eec2)
+  - [EAS DOCS](https://expo.dev/eas/workflows/google-search-feb?utm_source=google&utm_medium=cpc&utm_campaign=22259666577&utm_term=react%20hosting&utm_content=174682255585&gad_source=1&gad_campaignid=22259666577&gbraid=0AAAAApZvKwH6HUwrpvzHQZqMvjNf7I_U0&gclid=CjwKCAjw4K3DBhBqEiwAYtG_9N8QB92nNo2kfZ19CK1EOBxC5pyaP8cHibxQon0Jr9ZNcEoxBZfzxhoCn-kQAvD_BwE)
+  - [React Native Hosting with EAS](https://expo.dev/blog/expo-announces-eas-hosting-service)
 
 ### ✅ Core Features WEB
 
@@ -63,7 +86,6 @@
 - [ ] Routine Sharing (local) - Local state management
 - [ ] Theme Toggle/Dark Mode Schedule - CSS + localStorage
 
-
 ## 🔧 Backend Required Features (AppWrite or Firebase recommended)
 
 ### 🌐 Need Authentication & Database
@@ -81,20 +103,16 @@
 - [ ] Friend requests
 - [ ] Comments/likes
 
-
 ### Public Routine Library
 
 - [ ] User-generated content
 - [ ] Search/filter/rating system
 - [ ] Moderation
 
-
 ### Accountability Partners
 
 - [ ] Real-time sync
 - [ ] Notifications between users
-
-
 
 ## 📊 Need Data Processing
 
@@ -105,14 +123,11 @@ ML-based insights
 Long-term data storage
 Comparative analysis
 
-
 ### AI Coach Integration
 
 GPT/Claude API integration
 Personalized recommendations
 Pattern analysis
-
-
 
 ## 🔌 Need External Services
 
@@ -122,21 +137,17 @@ Pattern analysis
 - Webhook processing
 - Data normalization
 
-
 ### Calendar Sync
 
 - Google Calendar API
 - Outlook integration
 - Two-way sync
 
-
 ### Spotify Integration
 
 - OAuth authentication
 - Playlist management
 - Playback control
-
-
 
 ## 🏆 Need Persistent Storage
 
@@ -147,8 +158,6 @@ Pattern analysis
 - XP/level persistence
 - Daily challenges distribution
 
-
-
 ## 🚀 Hybrid Features (Start frontend, add backend later)
 
 - Notifications - Start with browser notifications, add push notifications with backend
@@ -158,14 +167,11 @@ Pattern analysis
 
 Recommendation: Start with all the frontend-only features to make your app fully functional offline, then gradually add backend features based on user demand.
 
--------
+---
 
-------
+---
 
-------
-
-
-
+---
 
 # Turborepo starter with shadcn/ui
 
