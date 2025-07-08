@@ -4,15 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Update README">
+    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Tamagui Expo implementation with React Native">
+      <change afterPath="$PROJECT_DIR$/apps/mobile/.yarn/releases/yarn-4.5.0.cjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/.yarnrc.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/(tabs)/two.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/+html.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/CurrentToast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/Provider.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/modal.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/assets/images/splash.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/biome.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/metro.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/tamagui-web.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/tamagui.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/tsconfig.base.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/web/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/textarea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/textarea.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app/(tabs)/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/(tabs)/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app/(tabs)/explore.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app/(tabs)/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/(tabs)/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app/+not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/+not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/_layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/assets/images/partial-react-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/assets/images/react-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/assets/images/react-logo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/assets/images/react-logo@3x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/assets/images/splash-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/Collapsible.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/ExternalLink.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/HapticTab.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/HelloWave.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/ParallaxScrollView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/ThemedText.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/ThemedView.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/ui/IconSymbol.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/ui/IconSymbol.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/ui/TabBarBackground.ios.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/components/ui/TabBarBackground.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/constants/Colors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/constants/Colors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/hooks/useColorScheme.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/hooks/useColorScheme.web.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/hooks/useThemeColor.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/scripts/reset-project.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +70,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="develop" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -35,6 +83,31 @@
     &quot;assignee&quot;: &quot;Fremen1990&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1751965171" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1751965170" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Fremen1990/self-care-routine.git&quot;,
@@ -88,8 +161,8 @@
     "npm.format.executor": "Run",
     "npm.lint.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/devthomas/devthomas/projects/self-care-routine/node_modules/prettier",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Confirmation",
-    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "settings.editor.selected.configurable": "web-ide.project.structure",
+    "ts.external.directory.path": "/Users/devthomas/devthomas/projects/self-care-routine/packages/hooks/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -303,6 +376,7 @@
     <MESSAGE value="reusable Zustand Store for web and react native" />
     <MESSAGE value="Basic CRUD" />
     <MESSAGE value="Update README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README" />
+    <MESSAGE value="Tamagui Expo implementation with React Native" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tamagui Expo implementation with React Native" />
   </component>
 </project>
