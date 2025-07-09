@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Tamagui Expo implementation with React Native">
+    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="wokring react native app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/.yarnrc.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/(tabs)/_layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/(tabs)/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/(tabs)/two.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/+not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/+not-found.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/CurrentToast.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/mobile/app/Provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/Provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/_layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/_layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/modal.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/babel.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/metro.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/metro.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app/routine/evening/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/routine/evening/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app/routine/morning/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/routine/morning/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/tamagui-web.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/tamagui.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/yarn.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,29 +99,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/turborepo-shadcn-ui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.format.executor&quot;: &quot;Run&quot;,
-    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/packages/hooks/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/devthomas/devthomas/projects/self-care-routine/turborepo-shadcn-ui",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.format.executor": "Run",
+    "npm.lint.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/devthomas/devthomas/projects/self-care-routine/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "/Users/devthomas/devthomas/projects/self-care-routine/packages/hooks/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
@@ -211,7 +200,9 @@
       <workItem from="1751893038835" duration="8687000" />
       <workItem from="1751925749260" duration="6225000" />
       <workItem from="1751970394368" duration="5853000" />
-      <workItem from="1751980642717" duration="8021000" />
+      <workItem from="1751980642717" duration="8869000" />
+      <workItem from="1752004299530" duration="1575000" />
+      <workItem from="1752049183428" duration="5494000" />
     </task>
     <task id="LOCAL-00001" summary="Migrate to Turborepo">
       <option name="closed" value="true" />
@@ -325,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751970327385</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="wokring react native app">
+      <option name="closed" value="true" />
+      <created>1751988873042</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1751988873042</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +353,7 @@
     <MESSAGE value="Basic CRUD" />
     <MESSAGE value="Update README" />
     <MESSAGE value="Tamagui Expo implementation with React Native" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tamagui Expo implementation with React Native" />
+    <MESSAGE value="wokring react native app" />
+    <option name="LAST_COMMIT_MESSAGE" value="wokring react native app" />
   </component>
 </project>

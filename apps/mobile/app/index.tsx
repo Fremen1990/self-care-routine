@@ -1,91 +1,102 @@
-// apps/mobile/app/index.tsx - Pure React Native Version
-import React from 'react';
-import { ScrollView, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { useRouter } from 'expo-router';
+import React from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
+import { useRouter } from "expo-router";
+import { useRoutineStore } from "../store/routine-store";
+import { ProgressDisplay, Card } from "../components";
 
 export default function Home() {
   const router = useRouter();
+  const { morningTasks, eveningTasks } = useRoutineStore();
 
-  // Mock data
-  const mockData = {
-    morningProgress: 60,
-    eveningProgress: 30,
-    completedMorning: 3,
-    totalMorning: 5,
-    completedEvening: 2,
-    totalEvening: 6,
-  };
+  // Calculate morning progress
+  const completedMorningTasks =
+    morningTasks?.filter((task) => task.completed)?.length || 0;
+
+  const totalMorningTasks = morningTasks?.length || 0;
+  const morningProgress =
+    totalMorningTasks > 0
+      ? (completedMorningTasks / totalMorningTasks) * 100
+      : 0;
+
+  // Calculate evening progress
+  const completedEveningTasks =
+    eveningTasks?.filter((task) => task.completed)?.length || 0;
+  const totalEveningTasks = eveningTasks?.length || 0;
+  const eveningProgress =
+    totalEveningTasks > 0
+      ? (completedEveningTasks / totalEveningTasks) * 100
+      : 0;
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.content}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.title}>Self Care Routine</Text>
+          <Text style={styles.title}>Daily Self-Care Routine</Text>
           <Text style={styles.subtitle}>
             Start your day with intention, end with reflection
           </Text>
         </View>
 
-        {/* Progress Section */}
-        <View style={styles.progressCard}>
-          <Text style={styles.cardTitle}>📊 Today's Progress</Text>
-
-          <View style={styles.progressItem}>
-            <View style={styles.progressHeader}>
-              <Text>Morning ({mockData.completedMorning}/{mockData.totalMorning})</Text>
-              <Text style={styles.progressText}>{mockData.morningProgress}%</Text>
-            </View>
-            <View style={styles.progressBar}>
-              <View style={[styles.progressFill, { width: `${mockData.morningProgress}%`, backgroundColor: '#22c55e' }]} />
-            </View>
-          </View>
-
-          <View style={styles.progressItem}>
-            <View style={styles.progressHeader}>
-              <Text>Evening ({mockData.completedEvening}/{mockData.totalEvening})</Text>
-              <Text style={styles.progressText}>{mockData.eveningProgress}%</Text>
-            </View>
-            <View style={styles.progressBar}>
-              <View style={[styles.progressFill, { width: `${mockData.eveningProgress}%`, backgroundColor: '#a855f7' }]} />
-            </View>
-          </View>
+        {/* Morning Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>🌞 Morning Routine</Text>
+          <ProgressDisplay
+            completedTasks={completedMorningTasks}
+            totalTasks={totalMorningTasks}
+            fillColor="#f97316" // Orange for morning
+          />
+          <TouchableOpacity
+            style={styles.routineButton}
+            onPress={() => router.push("/routine/morning")}
+          >
+            <Text style={styles.buttonText}>Go to Morning Routine</Text>
+          </TouchableOpacity>
         </View>
 
-        {/* Routine Buttons */}
-        <View style={styles.routineSection}>
+        {/* Evening Section */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>🌙 Evening Routine</Text>
+          <ProgressDisplay
+            completedTasks={completedEveningTasks}
+            totalTasks={totalEveningTasks}
+            fillColor="#a855f7" // Purple for evening
+          />
           <TouchableOpacity
-            style={[styles.routineButton, { backgroundColor: '#3b82f6' }]}
-            onPress={() => router.push('/routine/morning')}
+            style={styles.routineButton}
+            onPress={() => router.push("/routine/evening")}
           >
-            <Text style={styles.routineButtonText}>Morning Routine</Text>
-            <Text style={styles.routineDescription}>Track your morning self-care routine</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={[styles.routineButton, { backgroundColor: '#a855f7' }]}
-            onPress={() => router.push('/routine/evening')}
-          >
-            <Text style={styles.routineButtonText}>Evening Routine</Text>
-            <Text style={styles.routineDescription}>Track your evening self-care routine</Text>
+            <Text style={styles.buttonText}>Go to Evening Routine</Text>
           </TouchableOpacity>
         </View>
 
         {/* Sleep Schedule */}
-        <View style={[styles.progressCard, { backgroundColor: '#f3e8ff' }]}>
-          <Text style={styles.cardTitle}>🌙 Sleep Schedule</Text>
+        <Card title="Sleep Schedule" icon="🌙" backgroundColor="#f3e8ff">
           <Text style={styles.sleepText}>Target finish: 09:00</Text>
-          <Text style={styles.sleepText}>Sleep by: 00:30 (7.5h) or 01:00 (8h)</Text>
-        </View>
+          <Text style={styles.sleepText}>
+            Sleep by: 00:30 (7.5h) or 01:00 (8h)
+          </Text>
+        </Card>
 
         {/* Quick Tips */}
-        <View style={[styles.progressCard, { backgroundColor: '#dbeafe' }]}>
-          <Text style={styles.cardTitle}>Quick Self-Care Tips</Text>
-          <Text style={styles.tipText}>• Start your day with a glass of water</Text>
+        <Card title="Quick Self-Care Tips" backgroundColor="#dbeafe">
+          <Text style={styles.tipText}>
+            • Start your day with a glass of water
+          </Text>
           <Text style={styles.tipText}>• Take short breaks during work</Text>
-          <Text style={styles.tipText}>• Practice deep breathing when stressed</Text>
-          <Text style={styles.tipText}>• Stretch regularly throughout the day</Text>
-        </View>
+          <Text style={styles.tipText}>
+            • Practice deep breathing when stressed
+          </Text>
+          <Text style={styles.tipText}>
+            • Stretch regularly throughout the day
+          </Text>
+        </Card>
       </View>
     </ScrollView>
   );
@@ -94,82 +105,59 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#fff",
   },
   content: {
-    padding: 16,
+    padding: 20,
     gap: 20,
   },
   header: {
-    alignItems: 'center',
-    gap: 8,
-    marginVertical: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 16,
+    backgroundColor: "#f3f4f6",
+    borderRadius: 16,
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontWeight: "bold",
   },
   subtitle: {
     fontSize: 16,
-    color: '#6b7280',
-    textAlign: 'center',
+    fontWeight: "500",
+    marginTop: 8,
+    textAlign: "center",
+    color: "#6b7280",
+    marginBottom: 10,
   },
-  progressCard: {
-    backgroundColor: '#f8fafc',
+  section: {
+    gap: 12,
+    backgroundColor: "#f8fafc",
     padding: 16,
-    borderRadius: 12,
-    gap: 12,
+    borderRadius: 16,
   },
-  cardTitle: {
+  sectionTitle: {
     fontSize: 18,
-    fontWeight: '600',
-  },
-  progressItem: {
-    gap: 8,
-  },
-  progressHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  progressText: {
-    fontWeight: '600',
-  },
-  progressBar: {
-    height: 8,
-    backgroundColor: '#e5e7eb',
-    borderRadius: 4,
-    overflow: 'hidden',
-  },
-  progressFill: {
-    height: '100%',
-    borderRadius: 4,
-  },
-  routineSection: {
-    gap: 12,
+    fontWeight: "600",
   },
   routineButton: {
-    padding: 16,
-    borderRadius: 12,
-    gap: 4,
+    backgroundColor: "#3b82f6",
+    padding: 14,
+    borderRadius: 8,
+    alignItems: "center",
   },
-  routineButtonText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: '600',
-  },
-  routineDescription: {
-    color: 'rgba(255, 255, 255, 0.8)',
-    fontSize: 14,
+  buttonText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "600",
   },
   sleepText: {
     fontSize: 14,
-    color: '#7c3aed',
+    color: "#4b5563",
   },
   tipText: {
     fontSize: 14,
-    color: '#1e40af',
-    lineHeight: 20,
+    color: "#4b5563",
+    marginBottom: 4,
   },
 });

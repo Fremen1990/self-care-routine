@@ -1,95 +1,50 @@
-// apps/mobile/app/routine/morning/index.tsx - Pure React Native
-import React, { useState } from 'react';
-import { ScrollView, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
-interface SimpleTask {
-  id: string;
-  time: string;
-  title: string;
-  description: string;
-  duration: number;
-  icon: string;
-  completed: boolean;
-}
+import React, { useRef } from "react";
+import {
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
+import { useRoutineStore } from "../../../store/routine-store";
+import {
+  ProgressDisplay,
+  ProgressConfetti,
+  RoutineHeader,
+} from "../../../components";
+import { RoutineTypes } from "../../../components/RoutineHeader";
 
 export default function MorningRoutine() {
-  const [tasks, setTasks] = useState<SimpleTask[]>([
-    {
-      id: "1",
-      time: "06:30",
-      title: "Wake up & Prep",
-      description: "Get dressed, hydrate, light warm-up",
-      duration: 15,
-      icon: "💤",
-      completed: false,
-    },
-    {
-      id: "2",
-      time: "06:45",
-      title: "Training Run",
-      description: "1h daily",
-      duration: 60,
-      icon: "🏃",
-      completed: true,
-    },
-    {
-      id: "3",
-      time: "07:45",
-      title: "Cold shower",
-      description: "Cold shower for recovery",
-      duration: 10,
-      icon: "🚿",
-      completed: false,
-    },
-    {
-      id: "4",
-      time: "07:55",
-      title: "Meditation",
-      description: "Mindfulness before work",
-      duration: 10,
-      icon: "🧘",
-      completed: false,
-    },
-    {
-      id: "5",
-      time: "08:05",
-      title: "Breakfast",
-      description: "Prepare & eat breakfast",
-      duration: 30,
-      icon: "🍳",
-      completed: false,
-    },
-  ]);
+  const scrollViewRef = useRef(null);
+  const scrollYRef = useRef(0);
+  const { morningTasks, toggleTask, resetMorning } = useRoutineStore();
 
-  const completedTasks = tasks.filter(task => task.completed).length;
-  const progress = (completedTasks / tasks.length) * 100;
+  // Calculate progress
+  const completedTasks =
+    morningTasks?.filter((task) => task.completed)?.length || 0;
+  const totalTasks = morningTasks?.length || 0;
+  const progress = totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
 
-  const toggleTask = (taskId: string) => {
-    setTasks(tasks.map(task =>
-      task.id === taskId ? { ...task, completed: !task.completed } : task
-    ));
-  };
-
-  const resetTasks = () => {
-    setTasks(tasks.map(task => ({ ...task, completed: false })));
+  const handleScroll = (event) => {
+    scrollYRef.current = event.nativeEvent.contentOffset.y;
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      ref={scrollViewRef}
+      style={styles.container}
+      onScroll={handleScroll}
+      scrollEventThrottle={16} // For smooth tracking
+    >
       <View style={styles.content}>
         {/* Header */}
-        <Text style={styles.title}>Morning Routine</Text>
+        <RoutineHeader type={RoutineTypes.MORNING} />
 
-        {/* Progress */}
-        <View style={styles.progressCard}>
-          <View style={styles.progressHeader}>
-            <Text style={styles.progressLabel}>Progress</Text>
-            <Text style={styles.progressText}>{Math.round(progress)}%</Text>
-          </View>
-          <View style={styles.progressBar}>
-            <View style={[styles.progressFill, { width: `${progress}%` }]} />
-          </View>
-        </View>
+        <ProgressDisplay
+          completedTasks={completedTasks}
+          totalTasks={totalTasks}
+          fillColor="#22c55e"
+        />
 
         {/* Sleep Info */}
         <View style={styles.sleepCard}>
@@ -100,12 +55,12 @@ export default function MorningRoutine() {
 
         {/* Tasks */}
         <View style={styles.tasksSection}>
-          {tasks.map((task) => (
+          {morningTasks.map((task) => (
             <View
               key={task.id}
               style={[
                 styles.taskCard,
-                task.completed && styles.taskCardCompleted
+                task.completed && styles.taskCardCompleted,
               ]}
             >
               <View style={styles.taskHeader}>
@@ -121,14 +76,18 @@ export default function MorningRoutine() {
               <TouchableOpacity
                 style={[
                   styles.taskButton,
-                  task.completed ? styles.taskButtonCompleted : styles.taskButtonPending
+                  task.completed
+                    ? styles.taskButtonCompleted
+                    : styles.taskButtonPending,
                 ]}
                 onPress={() => toggleTask(task.id)}
               >
-                <Text style={[
-                  styles.taskButtonText,
-                  task.completed && styles.taskButtonTextCompleted
-                ]}>
+                <Text
+                  style={[
+                    styles.taskButtonText,
+                    task.completed && styles.taskButtonTextCompleted,
+                  ]}
+                >
                   {task.completed ? "✓ Completed" : "Mark Complete"}
                 </Text>
               </TouchableOpacity>
@@ -137,9 +96,16 @@ export default function MorningRoutine() {
         </View>
 
         {/* Reset Button */}
-        <TouchableOpacity style={styles.resetButton} onPress={resetTasks}>
+        <TouchableOpacity style={styles.resetButton} onPress={resetMorning}>
           <Text style={styles.resetButtonText}>Reset Morning</Text>
         </TouchableOpacity>
+
+        {/* Reusable confetti component */}
+        <ProgressConfetti
+          progress={progress}
+          scrollY={scrollYRef.current}
+          colors={["#22c55e", "#3b82f6", "#eab308", "#ef4444"]}
+        />
       </View>
     </ScrollView>
   );
@@ -148,7 +114,10 @@ export default function MorningRoutine() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
+  },
+  scrollView: {
+    flex: 1,
   },
   content: {
     padding: 16,
@@ -156,76 +125,79 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
   },
   progressCard: {
-    backgroundColor: '#f8fafc',
+    backgroundColor: "#f8fafc",
     padding: 16,
     borderRadius: 12,
     gap: 8,
   },
   progressHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   progressLabel: {
     fontSize: 14,
-    color: '#6b7280',
+    color: "#6b7280",
   },
   progressText: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   progressBar: {
     height: 8,
-    backgroundColor: '#e5e7eb',
+    backgroundColor: "#e5e7eb",
     borderRadius: 4,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   progressFill: {
-    height: '100%',
-    backgroundColor: '#22c55e',
+    height: "100%",
+    backgroundColor: "#22c55e",
     borderRadius: 4,
   },
+  progressItem: {
+    gap: 8,
+  },
   sleepCard: {
-    backgroundColor: '#dbeafe',
+    backgroundColor: "#dbeafe",
     padding: 12,
     borderRadius: 12,
     gap: 4,
   },
   sleepTitle: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   sleepText: {
     fontSize: 12,
-    color: '#1e40af',
+    color: "#1e40af",
   },
   tasksSection: {
     gap: 12,
   },
   taskCard: {
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
     padding: 16,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#e5e7eb',
+    borderColor: "#e5e7eb",
     gap: 12,
   },
   taskCardCompleted: {
-    backgroundColor: '#f0fdf4',
-    borderColor: '#22c55e',
+    backgroundColor: "#f0fdf4",
+    borderColor: "#22c55e",
   },
   taskHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 12,
   },
   taskTime: {
     fontSize: 12,
-    color: '#6b7280',
+    color: "#6b7280",
     minWidth: 40,
   },
   taskIcon: {
@@ -237,47 +209,47 @@ const styles = StyleSheet.create({
   },
   taskTitle: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   taskDescription: {
     fontSize: 14,
-    color: '#6b7280',
+    color: "#6b7280",
   },
   taskDuration: {
     fontSize: 12,
-    color: '#6b7280',
+    color: "#6b7280",
   },
   taskButton: {
     padding: 12,
     borderRadius: 8,
-    alignItems: 'center',
+    alignItems: "center",
   },
   taskButtonPending: {
-    backgroundColor: '#3b82f6',
+    backgroundColor: "#3b82f6",
   },
   taskButtonCompleted: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
     borderWidth: 1,
-    borderColor: '#22c55e',
+    borderColor: "#22c55e",
   },
   taskButtonText: {
-    color: 'white',
+    color: "white",
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   taskButtonTextCompleted: {
-    color: '#22c55e',
+    color: "#22c55e",
   },
   resetButton: {
-    backgroundColor: '#ef4444',
+    backgroundColor: "#ef4444",
     padding: 12,
     borderRadius: 8,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 8,
   },
   resetButtonText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });

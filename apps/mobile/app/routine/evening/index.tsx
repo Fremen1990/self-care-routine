@@ -1,119 +1,70 @@
-// apps/mobile/app/routine/evening/index.tsx - Pure React Native
-import React, { useState } from 'react';
-import { ScrollView, View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useRef } from "react";
+import {
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  NativeSyntheticEvent,
+  NativeScrollEvent,
+} from "react-native";
+import { useRoutineStore } from "../../../store/routine-store";
 
-interface SimpleTask {
-  id: string;
-  time: string;
-  title: string;
-  description: string;
-  duration: number;
-  icon: string;
-  completed: boolean;
-}
+import {
+  ProgressDisplay,
+  ProgressConfetti,
+  RoutineHeader,
+} from "../../../components";
+import { RoutineTypes } from "../../../components/RoutineHeader";
 
 export default function EveningRoutine() {
-  const [tasks, setTasks] = useState<SimpleTask[]>([
-    {
-      id: "1",
-      time: "20:30",
-      title: "Screens Off",
-      description: "Turn off all screens, start wind-down",
-      duration: 0,
-      icon: "📵",
-      completed: false,
-    },
-    {
-      id: "2",
-      time: "20:30",
-      title: "Evening Stretching",
-      description: "Gentle stretches to release tension",
-      duration: 15,
-      icon: "🤸‍♀️",
-      completed: true,
-    },
-    {
-      id: "3",
-      time: "20:45",
-      title: "Hot Shower",
-      description: "Warm shower to relax muscles",
-      duration: 15,
-      icon: "🛁",
-      completed: false,
-    },
-    {
-      id: "4",
-      time: "21:00",
-      title: "Evening Meditation",
-      description: "Calm the mind before sleep",
-      duration: 10,
-      icon: "🧘‍♀️",
-      completed: false,
-    },
-    {
-      id: "5",
-      time: "21:10",
-      title: "Journaling",
-      description: "Reflect on the day, gratitude",
-      duration: 10,
-      icon: "📝",
-      completed: false,
-    },
-    {
-      id: "6",
-      time: "21:20",
-      title: "Reading in Bed",
-      description: "Read until naturally sleepy",
-      duration: 40,
-      icon: "📚",
-      completed: false,
-    },
-  ]);
+  const scrollViewRef = useRef(null);
+  const scrollYRef = useRef(0);
+  const { eveningTasks, toggleTask, resetEvening } = useRoutineStore();
 
-  const completedTasks = tasks.filter(task => task.completed).length;
-  const progress = (completedTasks / tasks.length) * 100;
+  // Calculate progress
+  const completedTasks =
+    eveningTasks?.filter((task) => task.completed)?.length || 0;
+  const totalTasks = eveningTasks?.length || 0;
+  const progress = totalTasks > 0 ? (completedTasks / totalTasks) * 100 : 0;
 
-  const toggleTask = (taskId: string) => {
-    setTasks(tasks.map(task =>
-      task.id === taskId ? { ...task, completed: !task.completed } : task
-    ));
-  };
-
-  const resetTasks = () => {
-    setTasks(tasks.map(task => ({ ...task, completed: false })));
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    scrollYRef.current = event.nativeEvent.contentOffset.y;
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView
+      ref={scrollViewRef}
+      style={styles.container}
+      onScroll={handleScroll}
+      scrollEventThrottle={16}
+    >
       <View style={styles.content}>
         {/* Header */}
-        <Text style={styles.title}>Evening Routine</Text>
+        <RoutineHeader type={RoutineTypes.EVENING} />
 
-        {/* Progress */}
-        <View style={styles.progressCard}>
-          <View style={styles.progressHeader}>
-            <Text style={styles.progressLabel}>Progress</Text>
-            <Text style={styles.progressText}>{Math.round(progress)}%</Text>
-          </View>
-          <View style={styles.progressBar}>
-            <View style={[styles.progressFill, { width: `${progress}%` }]} />
-          </View>
-        </View>
+        <ProgressDisplay
+          completedTasks={completedTasks}
+          totalTasks={totalTasks}
+          fillColor="#22c55e"
+        />
 
         {/* Sleep Reminder */}
         <View style={styles.sleepCard}>
           <Text style={styles.sleepTitle}>🌙 Sleep Reminder</Text>
-          <Text style={styles.sleepText}>Aim to sleep by 01:30 for optimal rest</Text>
+          <Text style={styles.sleepText}>
+            Aim to sleep by 01:30 for optimal rest
+          </Text>
         </View>
 
         {/* Tasks */}
         <View style={styles.tasksSection}>
-          {tasks.map((task) => (
+          {eveningTasks.map((task) => (
             <View
               key={task.id}
               style={[
                 styles.taskCard,
-                task.completed && styles.taskCardCompleted
+                task.completed && styles.taskCardCompleted,
               ]}
             >
               <View style={styles.taskHeader}>
@@ -129,14 +80,18 @@ export default function EveningRoutine() {
               <TouchableOpacity
                 style={[
                   styles.taskButton,
-                  task.completed ? styles.taskButtonCompleted : styles.taskButtonPending
+                  task.completed
+                    ? styles.taskButtonCompleted
+                    : styles.taskButtonPending,
                 ]}
-                onPress={() => toggleTask(task.id)}
+                onPress={() => toggleTask(task.id, true)}
               >
-                <Text style={[
-                  styles.taskButtonText,
-                  task.completed && styles.taskButtonTextCompleted
-                ]}>
+                <Text
+                  style={[
+                    styles.taskButtonText,
+                    task.completed && styles.taskButtonTextCompleted,
+                  ]}
+                >
                   {task.completed ? "✓ Completed" : "Mark Complete"}
                 </Text>
               </TouchableOpacity>
@@ -145,9 +100,15 @@ export default function EveningRoutine() {
         </View>
 
         {/* Reset Button */}
-        <TouchableOpacity style={styles.resetButton} onPress={resetTasks}>
+        <TouchableOpacity style={styles.resetButton} onPress={resetEvening}>
           <Text style={styles.resetButtonText}>Reset Evening</Text>
         </TouchableOpacity>
+
+        <ProgressConfetti
+          progress={progress}
+          scrollY={scrollYRef.current}
+          colors={["#a855f7", "#8b5cf6", "#d946ef", "#f472b6"]}
+        />
       </View>
     </ScrollView>
   );
@@ -156,7 +117,7 @@ export default function EveningRoutine() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
   },
   content: {
     padding: 16,
@@ -164,76 +125,46 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
   },
-  progressCard: {
-    backgroundColor: '#f8fafc',
-    padding: 16,
-    borderRadius: 12,
-    gap: 8,
-  },
-  progressHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  progressLabel: {
-    fontSize: 14,
-    color: '#6b7280',
-  },
-  progressText: {
-    fontSize: 14,
-    fontWeight: '600',
-  },
-  progressBar: {
-    height: 8,
-    backgroundColor: '#e5e7eb',
-    borderRadius: 4,
-    overflow: 'hidden',
-  },
-  progressFill: {
-    height: '100%',
-    backgroundColor: '#a855f7',
-    borderRadius: 4,
-  },
   sleepCard: {
-    backgroundColor: '#f3e8ff',
+    backgroundColor: "#f3e8ff",
     padding: 12,
     borderRadius: 12,
     gap: 4,
   },
   sleepTitle: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   sleepText: {
     fontSize: 12,
-    color: '#7c3aed',
+    color: "#7c3aed",
   },
   tasksSection: {
     gap: 12,
   },
   taskCard: {
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
     padding: 16,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#e5e7eb',
+    borderColor: "#e5e7eb",
     gap: 12,
   },
   taskCardCompleted: {
-    backgroundColor: '#f0fdf4',
-    borderColor: '#22c55e',
+    backgroundColor: "#f0fdf4",
+    borderColor: "#22c55e",
   },
   taskHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     gap: 12,
   },
   taskTime: {
     fontSize: 12,
-    color: '#6b7280',
+    color: "#6b7280",
     minWidth: 40,
   },
   taskIcon: {
@@ -245,47 +176,47 @@ const styles = StyleSheet.create({
   },
   taskTitle: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   taskDescription: {
     fontSize: 14,
-    color: '#6b7280',
+    color: "#6b7280",
   },
   taskDuration: {
     fontSize: 12,
-    color: '#6b7280',
+    color: "#6b7280",
   },
   taskButton: {
     padding: 12,
     borderRadius: 8,
-    alignItems: 'center',
+    alignItems: "center",
   },
   taskButtonPending: {
-    backgroundColor: '#a855f7',
+    backgroundColor: "#a855f7",
   },
   taskButtonCompleted: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
     borderWidth: 1,
-    borderColor: '#22c55e',
+    borderColor: "#22c55e",
   },
   taskButtonText: {
-    color: 'white',
+    color: "white",
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
   },
   taskButtonTextCompleted: {
-    color: '#22c55e',
+    color: "#22c55e",
   },
   resetButton: {
-    backgroundColor: '#ef4444',
+    backgroundColor: "#ef4444",
     padding: 12,
     borderRadius: 8,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 8,
   },
   resetButtonText: {
-    color: 'white',
+    color: "white",
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });
