@@ -4,14 +4,101 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="wokring react native app">
+    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Update lockfile">
+      <change afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eas.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.expo/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/Provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/Provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/routine/evening/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/routine/evening/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/mobile/app/routine/morning/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app/routine/morning/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/.yarn/releases/yarn-4.5.0.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/.yarn/releases/yarn-4.5.0.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/assets/fonts/SpaceMono-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/assets/fonts/SpaceMono-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/mobile/eas.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/eas.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/apps/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/mobile/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/routine/evening/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/routine/evening/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/routine/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/routine/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/app/routine/morning/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/app/routine/morning/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/components/QuickTipsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/components/QuickTipsSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/components/RoutineSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/components/RoutineSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/components/RoutineTaskForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/components/RoutineTaskForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/components/RoutineTaskModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/components/RoutineTaskModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/next-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/next-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/next.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/postcss.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/store/routine-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/store/routine-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/web/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/web/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bunfig.toml" beforeDir="false" afterPath="$PROJECT_DIR$/bunfig.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/library.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/library.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/next.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/next.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react-internal.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react-internal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hooks/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hooks/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/hooks/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/hooks/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/services/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/services/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/services/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/services/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/services/src/routine-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/services/src/routine-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/stores/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/stores/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/stores/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/stores/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/stores/src/routine-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/stores/src/routine-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/stores/src/settings-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/stores/src/settings-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/stores/src/user-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/stores/src/user-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/types/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/types/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/types/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/types/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/types/src/routine-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/types/src/routine-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/types/src/routine.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/types/src/routine.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/typescript-config/base.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/typescript-config/base.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/typescript-config/nextjs.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/typescript-config/nextjs.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/typescript-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/typescript-config/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/typescript-config/react-library.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/typescript-config/react-library.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/typescript-config/react-native.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/typescript-config/react-native.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/components.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/postcss.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/providers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/theme-provider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/theme-provider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/progress-with-confetti.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/progress-with-confetti.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/progress.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/progress.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/routine-task-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/routine-task-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/routine-tip-card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/routine-tip-card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/separator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/sortable-task-list.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/sortable-task-list.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/tabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/textarea.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/textarea.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/theme-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/theme-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/components/ui/tooltip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/components/ui/tooltip.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/tailwind.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/ui/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/ui/tsconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prettier.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/prettier.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/turbo.json" beforeDir="false" afterPath="$PROJECT_DIR$/turbo.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,29 +186,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/devthomas/devthomas/projects/self-care-routine/turborepo-shadcn-ui",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "npm.format.executor": "Run",
-    "npm.lint.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/devthomas/devthomas/projects/self-care-routine/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/devthomas/devthomas/projects/self-care-routine/packages/hooks/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/turborepo-shadcn-ui&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.format.executor&quot;: &quot;Run&quot;,
+    &quot;npm.lint.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/packages/hooks/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
@@ -202,7 +289,13 @@
       <workItem from="1751970394368" duration="5853000" />
       <workItem from="1751980642717" duration="8869000" />
       <workItem from="1752004299530" duration="1575000" />
-      <workItem from="1752049183428" duration="5494000" />
+      <workItem from="1752049183428" duration="5681000" />
+      <workItem from="1752152363839" duration="1931000" />
+      <workItem from="1752156082692" duration="600000" />
+      <workItem from="1752163333764" duration="11295000" />
+      <workItem from="1752188438478" duration="1340000" />
+      <workItem from="1752232084742" duration="6589000" />
+      <workItem from="1752956164910" duration="956000" />
     </task>
     <task id="LOCAL-00001" summary="Migrate to Turborepo">
       <option name="closed" value="true" />
@@ -324,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751988873042</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add Confetti, Progress and Headers">
+      <option name="closed" value="true" />
+      <created>1752054866721</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1752054866721</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -354,6 +455,8 @@
     <MESSAGE value="Update README" />
     <MESSAGE value="Tamagui Expo implementation with React Native" />
     <MESSAGE value="wokring react native app" />
-    <option name="LAST_COMMIT_MESSAGE" value="wokring react native app" />
+    <MESSAGE value="Add Confetti, Progress and Headers" />
+    <MESSAGE value="Update lockfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update lockfile" />
   </component>
 </project>
