@@ -4,9 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Merge branch 'main' of https://github.com/Fremen1990/self-care-routine into develop&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;apps/docs/next.config.mjs&#10;#&#9;packages/services/src/routine-service.ts&#10;#&#9;packages/types/src/routine.ts">
+    <list default="true" id="7d159df6-c2bd-4b60-ac07-cd9c6c92a332" name="Changes" comment="Add new mobile app which is independent and should build on expo eas easily">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/.expo/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/.expo/devices.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/.expo/types/router.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/_layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/routine/evening/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/app/routine/morning/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/assets/fonts/SpaceMono-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/assets/images/adaptive-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/assets/images/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/assets/images/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/assets/images/splash-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/bun.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/components/Card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/components/ProgressConfetti.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/components/ProgressDisplay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/components/RoutineHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/eas.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/eslint.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/services/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/services/routine-service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/store/createRoutineStore.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/store/routine-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/types/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/types/routine-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/mobile/types/routine.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/docs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/apps/docs/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,24 +94,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#2 on develop&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/turborepo-shadcn-ui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/devthomas/devthomas/projects/self-care-routine/packages/services/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "/Users/devthomas/devthomas/projects/self-care-routine/apps/mobile/assets/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/devthomas/devthomas/projects/self-care-routine/node_modules/prettier",
+    "ts.external.directory.path": "/Users/devthomas/devthomas/projects/self-care-routine/packages/hooks/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/turborepo-shadcn-ui" />
@@ -138,6 +177,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Migrate to Turborepo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrate to Turborepo" />
+    <MESSAGE value="Add new mobile app which is independent and should build on expo eas easily" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new mobile app which is independent and should build on expo eas easily" />
   </component>
 </project>
