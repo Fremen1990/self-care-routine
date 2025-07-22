@@ -1,3 +1,6 @@
+# TODO: to be rewrited to bun workflow for deploy web app
+# TODO: to be rewrited to bun workflow for deploy mobile app
+
 name: Deploy to GitHub Pages
 
 on:

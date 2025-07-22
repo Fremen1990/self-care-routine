@@ -1,28 +1,22 @@
 {
   "name": "self-care-routine",
-  "version": "1.5.1",
+  "module": "index.ts",
+  "type": "module",
   "private": true,
-  "license": "MIT",
-  "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
-    "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "ui": "pnpm --filter @repo/ui ui"
-  },
   "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "eslint-config-prettier": "^10.1.5",
-    "prettier": "catalog:",
-    "turbo": "2.1.1"
+    "@types/bun": "latest"
   },
-  "packageManager": "pnpm@9.12.0",
-  "engines": {
-    "node": ">=20.17.0"
+  "peerDependencies": {
+    "typescript": "^5"
   },
-  "volta": {
-    "node": "22.14.0",
-    "pnpm": "9.12.0"
+  "scripts": {
+    "web:dev": "bun --cwd apps/web run dev",
+    "web:build": "bun --cwd apps/web run build",
+    "web:start": "bun --cwd apps/web run start",
+    "mobile:start": "bun --cwd apps/mobile run start",
+    "mobile:android": "bun --cwd apps/mobile run android",
+    "mobile:ios": "bun --cwd apps/mobile run ios",
+    "mobile:web": "bun --cwd apps/mobile run web",
+    "eas": "bun --cwd apps/mobile run eas"
   }
 }

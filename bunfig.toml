@@ -1,3 +1,0 @@
-[install]
-# This makes Bun compatible with workspaces
-hoisted = true
