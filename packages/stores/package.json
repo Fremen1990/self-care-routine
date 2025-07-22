@@ -1,0 +1,16 @@
+{
+  "name": "@repo/stores",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./routine": "./src/routine-store.ts"
+  },
+  "dependencies": {
+    "@repo/types": "workspace:*",
+    "@repo/services": "workspace:*",
+    "zustand": "^4.5.0"
+  }
+}

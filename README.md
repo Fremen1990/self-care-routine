@@ -1,3 +1,10 @@
+# 🧘 Self Care Routing 🌅
+
+## New project plan under [Self Care - Comprehensice Implementation Plan](https://github.com/Fremen1990/self-care-routine/blob/main/Self%20Care%20Routine%20App%20-%20Comprehensive%20Implementation%20Plan.md)
+---
+
+---
+
 # Turborepo starter with shadcn/ui
 
 ![Static Badge](https://img.shields.io/badge/shadcn%2Fui-2.1.2-blue?link=https%3A%2F%2Fgithub.com%2Fshadcn%2Fui)

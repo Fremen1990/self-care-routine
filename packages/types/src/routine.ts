@@ -1,3 +1,16 @@
+export interface CompletionData {
+  morningProgress: number;
+  eveningProgress: number;
+  morningTasks: RoutineTask[];
+  eveningTasks: RoutineTask[];
+  completedAt: string;
+}
+
+export interface SleepTimes {
+  sevenHalf: string;
+  eight: string;
+}
+
 export interface RoutineTask {
   id: string;
   time: string; // HH:mm format
@@ -10,7 +23,7 @@ export interface RoutineTask {
 
 export interface RoutineSchedule {
   id: string;
-  name: 'morning' | 'evening';
+  name: "morning" | "evening";
   tasks: RoutineTask[];
   startTime: string; // HH:mm format
   workStartTime?: string; // For morning routine
@@ -27,7 +40,7 @@ export interface RoutineState {
   morningRoutine: RoutineSchedule;
   eveningRoutine: RoutineSchedule;
   sleepSchedule: SleepSchedule;
-  currentTab: 'morning' | 'evening';
+  currentTab: "morning" | "evening";
 }
 
 export interface RoutineTip {
@@ -35,5 +48,5 @@ export interface RoutineTip {
   icon: string;
   title: string;
   description: string;
-  category: 'morning' | 'evening' | 'both';
+  category: "morning" | "evening" | "both";
 }
